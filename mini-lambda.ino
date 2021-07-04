@@ -93,9 +93,6 @@ void setup() {
 
 //------Start of Loop-----------------
 void loop() {
-  // move stepper towards target position
-  stepper.update();
-
   // process serial data
   if (lambdaReadInput()) {
     lambdaProcessInput();

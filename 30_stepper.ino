@@ -27,6 +27,6 @@ void set_stepper_pos() {
     } else { // all other errors
       stepper.setPosition(GAUGE_ND);
     }
-    stepper.updateBlocking(); // go there now
   }
+  stepper.updateBlocking(); // go there now
 }
