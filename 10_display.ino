@@ -35,10 +35,10 @@ void draw_lambda(uint16_t readout) {
 
     // status infos
     if (lambdaStatus & 0b00100000) { // temp reached
-      info = ".";
+      info = " ";
     }
     if (lambdaStatus & 0b10000000) { // heating
-      info = "*";
+      info = "H";
     }
     if (lambdaStatus & 0b00001000) { // voltage too high
       info = "U ++";
