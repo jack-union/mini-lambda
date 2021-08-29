@@ -23,21 +23,18 @@ void draw_lambda(uint16_t readout) {
 
   // connection valid?
   if (lambdaError == 255) {
-    if (lambdaStatus & 0b00100000) {  // temp reached
-      sprintf(data, "%03d", readout);
-    } else {
-      data[0] = "-";
-      data[1] = "-";
-      data[2] = "-";
-    }
-
-    // display sensor reading
     display.setFont(LARGE_FONT);
     display.setCursor(10, 46);
-    display.print(data[0]);
-    display.print(".");
-    display.print(data[1]);
-    display.print(data[2]);
+    if (lambdaStatus & 0b00100000) {  // temp reached
+      sprintf(data, "%03d", readout);
+      // display sensor reading
+      display.print(data[0]);
+      display.print(".");
+      display.print(data[1]);
+      display.print(data[2]);
+    } else {
+      display.print("......");
+    }
 
     // status infos
     if (lambdaStatus & 0b00100000) {  // temp reached
