@@ -74,7 +74,7 @@ void lambdaProcessInput() {
 }
 
 void lambdaSenseTimeout() {
-  if ((millis() - lambdaLastDataAt) > UPDATE_INTERVAL*100) {
+  if ((millis() - lambdaLastDataAt) > UPDATE_INTERVAL*30) {
     lambdaError = 254;
   }    
 }
